@@ -1,0 +1,23 @@
+<div class="container">
+
+<h1>New</h1>
+<%= form_for @todo_item, url: users_todo_items_url do |form| %>
+  <div class="field">
+    <%= form.label :Task_name %>
+    <%= form.text_field :item_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_field :body %>
+  </div>
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
+</div>

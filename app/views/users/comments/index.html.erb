@@ -1,0 +1,10 @@
+<div class="container">
+
+<h1>Comments on this task</h1>
+<br>
+
+<% @todo_item.comments.each do |c| %>
+<%= c.body%>
+<br>
+<%end%>
+</div>

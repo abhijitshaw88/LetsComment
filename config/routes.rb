@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  get 'home/index'
+  devise_for :users
   root "home#index"
   namespace :users do
     resources :todo_items do
