@@ -11,8 +11,11 @@ class Users::TodoItemsController < ApplicationController
 
   def create
     @todo_item = current_user.todo_items.build(todo_item_params)
-    @todo_item.save
-    redirect_to users_todo_items_url
+    if @todo_item.save
+      redirect_to users_todo_items_url
+    else
+      render 'new'
+    end
   end
   def edit
     @todo_item=TodoItem.find(params[:id])
@@ -20,8 +23,11 @@ class Users::TodoItemsController < ApplicationController
 
   def update
     @todo_item=TodoItem.find(params[:id])
-    @todo_item.update(todo_item_params)
-    redirect_to users_todo_items_url
+    if @todo_item.update(todo_item_params)
+      redirect_to users_todo_items_url
+    else
+      render 'edit'
+    end
   end
   def destroy
     @todo_item=TodoItem.find(params[:id])

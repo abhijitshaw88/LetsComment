@@ -14,8 +14,12 @@ class Users::CommentsController < ApplicationController
     @comment.todo_item_id=@todo_item.id
    # byebug
    # @comment.save!
-   @comment.save
-   redirect_to root_url
+   
+    if @comment.save
+      redirect_to root_url
+    else
+      render 'new'
+    end
  end
 
 
