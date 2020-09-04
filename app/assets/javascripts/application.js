@@ -18,9 +18,3 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize
-
-
-  document.addEventListener('DOMContentLoaded', function() {
-      var elems = document.querySelectorAll('.sidenav');
-      var instances = M.Sidenav.init(elems,{});
-    })
