@@ -1,4 +1,6 @@
 <p id="notice"><%= notice %></p>
+<div class="container">
+
 
 <h1>Todo Items</h1>
 
@@ -21,7 +23,7 @@
         <td><%= todo_item.body %></td>
         <td><%= todo_item.status %></td>
         <td><%= link_to 'Edit', edit_users_todo_item_path(todo_item) %></td>
-        <td><%= link_to 'Destroy', users_todo_item_url(todo_item), method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+        <td><%= link_to 'Destroy', users_todo_item_url(todo_item), method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
     <% end %>
@@ -32,3 +34,4 @@
 <br>
 
 <%= link_to 'New Todo Item', new_users_todo_item_path %>
+</div>

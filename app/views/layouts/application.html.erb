@@ -4,7 +4,6 @@
     <title>Todoapp</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,7 +11,8 @@
   <body>
     <nav>
       <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">ToDo</a>
+        <a href="#" class="brand-logo">ToDo</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <p class="navbar-text right">
                 <% if user_signed_in? %>
@@ -28,6 +28,19 @@
           </ul>
       </div>
     </nav>
+    <ul class="sidenav" id="mobile-demo">
+      <p class="navbar-text right">
+          <% if user_signed_in? %>
+            <li>    <%= link_to 'Home', root_url, :class => 'navbar-link ' %></li>
+            <li>    <%= link_to 'My task', users_todo_items_path, :class => 'navbar-link ' %></li>
+            <li>    <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link ' %></li>
+            <li>    <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link '%></li>
+          <% else %>
+            <li> <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'%></li>
+            <li> <%= link_to "Login", new_user_session_path, :class => 'navbar-link'%></li>
+          <% end %>
+      </p>
+    </ul>
     <%= yield %>
   </body>
 </html>
