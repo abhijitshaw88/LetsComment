@@ -18,3 +18,11 @@
 //= require turbolinks
 //= require_tree .
 //= require materialize
+
+$(document).on('turbolinks:load', function() {
+  $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });
+});
+
+console.log("ok");
